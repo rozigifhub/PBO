@@ -7,17 +7,21 @@ public class MainBioskop {
 
         Penonton budi = new Penonton("Andi", "0812-3456-7890");
         Penonton sari = new Penonton("Sinta", "0813-9876-5432");
+        Penonton rudi = new Penonton("Rudi", "0812-1111-2222");
 
      
         Tiket reguler = new TiketReguler("T-001", "Laskar Pelangi", 40000, true);  // weekend
         Tiket vip = new TiketVIP("T-002", "Laskar Pelangi", 40000, true);  // paket snack
+        Tiket t = new TiketVIP("T-009", "Dilan", 50000, false);
         reguler.setPemilik(budi);
         vip.setPemilik(sari);
+        t.setPemilik(rudi);
 
 
         MesinCetak mesin = new MesinCetak("M-01");
         mesin.cetak(reguler);
         mesin.cetak(vip);
+        mesin.cetak(t);
 
 
         bioskop.jualTiket(reguler);
@@ -25,5 +29,6 @@ public class MainBioskop {
         bioskop.jualTiket(vip, 4);  // jual tiket reguler di studio 1
 
         bioskop.tampilkanInfo();
+
     }
 }
